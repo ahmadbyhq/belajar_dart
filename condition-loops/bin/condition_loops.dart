@@ -16,6 +16,9 @@ void main() {
       case 3:
         nomor3();
         break;
+      case 4:
+        nomor4();
+        break;
       case 10:
         print('Keluar dari program.');
         loop = false;
@@ -74,4 +77,13 @@ void nomor3() {
         ? '$inputAngka adalah bilangan negatif.'
         : '$inputAngka adalah nol.',
   );
+}
+
+void nomor4() {
+  print('Tuliskan nama lengkap Anda: ');
+  String name = stdin.readLineSync()!;
+
+  for (int i = 1; i <= 100; i++) {
+    print('$i. $name');
+  }
 }
