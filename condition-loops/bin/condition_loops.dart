@@ -19,6 +19,21 @@ void main() {
       case 4:
         nomor4();
         break;
+      case 5:
+        nomor5();
+        break;
+      case 6:
+        nomor6();
+        break;
+      case 7:
+        nomor7();
+        break;
+      case 8:
+        nomor8();
+        break;
+      case 9:
+        nomor9();
+        break;
       case 10:
         print('Keluar dari program.');
         loop = false;
@@ -85,5 +100,104 @@ void nomor4() {
 
   for (int i = 1; i <= 100; i++) {
     print('$i. $name');
+  }
+}
+
+void nomor5() {
+  print('Masukkan jumlah deret yang ingin dihitung untuk bilangan asli: ');
+  String? inputRaw = stdin.readLineSync();
+  int? input = int.tryParse(inputRaw ?? '');
+  int sumAngka = 0;
+
+  if (input != null && input > 0) {
+    for (int i = 1; i <= input; i++) {
+      sumAngka += i;
+      print('deret ke $i = $sumAngka');
+    }
+    print('Hasil dari $input deret bilangan asli adalah $sumAngka');
+  } else {
+    print('Mohon untuk memasukkan angka positif yang valid!');
+  }
+}
+
+void nomor6() {
+  print(
+    'Masukkan jumlah baris yang ingin ditampilkan hasil perkalian kelipatan 5: ',
+  );
+  String? inputRaw = stdin.readLineSync();
+  int? input = int.tryParse(inputRaw ?? '');
+
+  int konstanta = 5;
+
+  if (input != null && input > 0) {
+    for (int i = 1; i <= input; i++) {
+      int multiply = konstanta * i;
+      print('$konstanta x $i = $multiply');
+    }
+  } else {
+    print('Mohon masukkan jumlah baris yang valid');
+  }
+}
+
+void nomor7() {
+  int nomor = 9;
+  for (int i = 1; i <= nomor; i++) {
+    print('--- Tabel Perkalian $i ---');
+    for (int j = 1; j <= nomor; j++) {
+      int multiply = i * j;
+      print('$i x $j = $multiply');
+    }
+    print('');
+  }
+}
+
+void nomor8() {
+  print('--- Kalkulator Sederhana ---');
+
+  print('Silahkan pilih operator (+, -, *, /): ');
+  String? operator = stdin.readLineSync();
+
+  print('Masukkan angka pertama: ');
+  double? angkaPertama = double.tryParse(stdin.readLineSync() ?? '');
+
+  print('Masukkan angka kedua: ');
+  double? angkaKedua = double.tryParse(stdin.readLineSync() ?? '');
+
+  double hasil;
+
+  if (angkaPertama != null && angkaKedua != null) {
+    switch (operator) {
+      case '+':
+        hasil = angkaPertama + angkaKedua;
+        print('$angkaPertama + $angkaKedua = $hasil');
+        break;
+      case '-':
+        hasil = angkaPertama - angkaKedua;
+        print('$angkaPertama - $angkaKedua = $hasil');
+        break;
+      case '*':
+        hasil = angkaPertama * angkaKedua;
+        print('$angkaPertama x $angkaKedua = $hasil');
+        break;
+      case '/':
+        if (angkaKedua == 0) {
+          print('Tidak bisa membagi dengan angka 0');
+        } else {
+          hasil = angkaPertama / angkaKedua;
+          print('$angkaPertama / $angkaKedua = $hasil');
+        }
+        break;
+      default:
+        print('Operator tidak valid');
+    }
+  } else {
+    print('Harap masukkan angka yang valid');
+  }
+}
+
+void nomor9() {
+  for (int i = 1; i <= 100; i++) {
+    if (i == 41 || i == 98) continue;
+    print('Angka ke-$i');
   }
 }
